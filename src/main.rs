@@ -1,8 +1,10 @@
-use std::env;
-use std::error;
+use crate::commandline::Args;
+use clap::Parser;
+
+mod commandline;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args = Args::parse();
 
-    println!("Hello, world!");
+    println!("Hello, world! {}", args.svn_url);
 }
