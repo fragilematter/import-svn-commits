@@ -7,15 +7,23 @@ use camino::Utf8PathBuf;
 #[command(version, about, long_about = None)]
 pub struct Args {
     /// SVN Server URL
-    #[arg(short = 'u', long)]
+    #[arg(short = 's', long)]
     pub svn_url: Url,
 
     /// SVN username
-    #[arg(short, long)]
-    pub svn_username: String,
+    #[arg(short = 'u', long)]
+    pub svn_username: Option<String>,
+
+    /// SVN password
+    #[arg(short = 'p', long)]
+    pub svn_password: bool,
+
+    /// SVN committer names
+    #[arg(short = 'c', long)]
+    pub svn_committers: Option<Vec<String>>,
 
     /// Path to destination git repo
-    #[arg(short, long)]
+    #[arg(short = 'd', long)]
     pub destination_repo: Utf8PathBuf,
 
     /// Committer name (Github name surname)
