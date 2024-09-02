@@ -61,3 +61,6 @@ git remote add origin git@github.com:you/private_contributions.git
 git branch -M main
 git push -u origin main
 ```
+
+After the push is complete, it's a good idea to Archive the repository, 
+preventing the creation of pull requests or issues.
