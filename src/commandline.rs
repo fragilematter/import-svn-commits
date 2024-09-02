@@ -14,15 +14,15 @@ pub struct Args {
     #[arg(short = 'u', long)]
     pub svn_username: Option<String>,
 
-    /// SVN password
+    /// SVN needs password
     #[arg(short = 'p', long)]
-    pub svn_password: bool,
+    pub svn_use_password: bool,
 
-    /// SVN committer names
+    /// SVN committer name(s)
     #[arg(short = 'c', long)]
     pub svn_committers: Option<Vec<String>>,
 
-    /// Path to destination git repo
+    /// Path to empty destination folder or existing git repo
     #[arg(short = 'd', long)]
     pub destination_repo: Utf8PathBuf,
 
